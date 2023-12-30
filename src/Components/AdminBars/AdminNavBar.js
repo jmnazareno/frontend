@@ -6,11 +6,11 @@ const AdminNavBar = () => {
     <div className="top-bar">
       <div className="logo">
         {/* Add your logo or app name here */}
-        Your Logo
+        <img src="/Assets/logo.png" alt="Logo" />
       </div>
       <div className="profile-icon">
         {/* Add your profile icon image here */}
-        <img src="profile-icon.png" alt="Profile" />
+        <img src="/Assets/person/1.jpeg" alt="Profile" />
       </div>
     </div>
   );

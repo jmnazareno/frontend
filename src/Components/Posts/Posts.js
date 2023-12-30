@@ -1,38 +1,62 @@
-import { MoreVert } from '@mui/icons-material'
-import React from 'react'
-import './Posts.css'
+// Posts.jsx
+import { MoreVert } from '@mui/icons-material';
+import React, { useState } from 'react';
+import './Posts.css';
+import { Users, Posts as DummyPosts } from '../../dummyData';
 
+const Posts = ({ post }) => {
+  const [like, setLike] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
 
+  const likeHandler = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
 
-const Posts = () => {
   return (
     <div className='Posts'>
-        <div className='PostTop'></div>
-            <div className='PostTopLeft'>
-            <img className='PostProfileImg' src='/Assets/person/1.jpg' alt=''/>
-                <span className='PostUsername'>Something</span>
-                <span className="PostDate">5mins ago</span>
-            </div>
-            <div className='PostTopRight'>
-                <MoreVert/>
-            </div>
+      <div className='PostWrapper'>
+        <div className='PostTop'>
+          <div className='PostTopLeft'>
+            <img
+              className='PostProfileImg'
+              src={Users.find((user) => user.id === post.userId)?.profilePicture}
+              alt=''
+            />
+            <span className='PostUsername'>{Users.find((user) => user.id === post.userId)?.username}</span>
+            <span className='PostDate'>{post.date}</span>
+          </div>
+          <div className='PostTopRight'>
+            <MoreVert />
+          </div>
+        </div>
         <div className='PostCenter'>
-            <span className='PostText'>Hey! It's my first post :) </span>
-            <img className="PostImg" src='Assets/posts/1.jpg' alt=''/>
+          <span className='PostText'>{post.desc}</span>
+          <img className='PostImg' src={post.photo} alt='' />
         </div>
         <div className='PostBottom'>
-            <div className='PostBottomLeft'>
-                <img className='LikeIcon' src='Assets/like,png' alt=''/>
-                <img className='LikeIcon' src='Assets/heart,png' alt=''/>
-                <span className='PostLikeCounter'>32 person people liked it</span>
-            </div>
-            <div className='PostBottomRight'>
-                <span className='PostCommentText'>9 comments</span>
-            </div>
+          <div className='PostBottomLeft'>
+            <img
+              className='LikeIcon'
+              src='/Assets/like.png'
+              onClick={likeHandler}
+              alt=''
+            />
+            <img
+              className='LikeIcon'
+              src='/Assets/heart.png'
+              onClick={likeHandler}
+              alt=''
+            />
+            <span className='PostLikeCounter'>{like} people liked it</span>
+          </div>
+          <div className='PostBottomRight'>
+            <span className='PostCommentText'>{post.comment} comments</span>
+          </div>
         </div>
-
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;
