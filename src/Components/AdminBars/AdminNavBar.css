@@ -1,0 +1,19 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebebeb; /* Light gray background color */
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .profile-icon img {
+    width: 30px; /* Adjust the width of the profile icon as needed */
+    height: 30px; /* Adjust the height of the profile icon as needed */
+    border-radius: 50%; /* To make it circular, adjust based on the icon shape */
+  }
+  
