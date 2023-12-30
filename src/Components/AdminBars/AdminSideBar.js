@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeRounded, PersonRounded, Settings, ExitToApp } from '@mui/icons-material';
+import { HomeRounded, PersonRounded, Settings } from '@mui/icons-material';
 import './AdminSideBar.css';
 
 const AdminSideBar = () => {
