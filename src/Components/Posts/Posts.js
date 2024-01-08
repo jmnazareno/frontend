@@ -2,7 +2,7 @@
 import { MoreVert } from '@mui/icons-material';
 import React, { useState } from 'react';
 import './Posts.css';
-import { Users, Posts as DummyPosts } from '../../dummyData';
+import { Users } from '../../dummyData'; // Removed DummyPosts since it's not used
 
 const Posts = ({ post }) => {
   const [like, setLike] = useState(0);

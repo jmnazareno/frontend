@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FRAPPE_BASE_URL } from '../../Data/Constants';
+import './Login.css'
+import { PersonRounded, Lock } from '@mui/icons-material';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -23,6 +25,17 @@ const Login = () => {
 
         // Store the authentication token in your React app
         localStorage.setItem('authToken', authToken);
+
+        // Check user type
+        if (response.data.full_name === 'Some Thing') {
+          // Redirect or perform actions for the administrator
+          console.log('Administrator logged in!');
+        } else {
+          // Assume any other user is a donor (website user)
+          // Redirect or perform actions for donors
+          console.log('Donor logged in!');
+        }
+
         alert('Login successful!');
       } else {
         setError('Invalid username or password');
@@ -44,29 +57,46 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Donation Portal | Login</h2>
-      <label>Email/Username</label>
-      <input
-        type="text"
-        placeholder="Enter your email or username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label>Password</label>
-      <input
-        type="password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <div>
-        <input type="checkbox" checked={rememberMe} onChange={handleRememberMe} />
-        <span>Remember me</span>
+      <img className='logo' src='/Assets/logo.png' alt='Logo'/>
+    <div className='wrapper'>
+      <h1>Donation Portal | Login</h1>
+      <label>Email</label>
+        <div className='input-box'>
+          <div className='icon'><PersonRounded/></div>
+          <input
+           type="text"
+           placeholder="Enter your email or username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            
+         />
+         
+         
+        </div>
+       <label>Password</label>
+        <div className='input-box'>
+          <div className='icon'><Lock/></div>
+         <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        </div> 
+      <div className='remember-forgot'>
+        <label><input type="checkbox" checked={rememberMe} onChange={handleRememberMe} />Remember me</label>
+        <a href='#'>Forgot Password?</a>
       </div>
+      <button type="submit" onClick={handleLogin}>Login</button>
+      <div className='Error'>
       {error && <div style={{ color: 'red' }}>{error}</div>}
-      <button onClick={handleLogin}>Login</button>
+      </div>
+      <div className='register-link'>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </div>
     </div>
   );
 };
 
-export default Login;
+export default Login

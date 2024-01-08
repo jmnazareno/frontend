@@ -2,7 +2,7 @@ body{
     background-color: #EBEBEB;
 }
 
-.AdminHomeContainer{
+.HomeContainer{
     display: flex;
     width: 100%;
 }

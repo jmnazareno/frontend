@@ -24,4 +24,5 @@
   width: 30px; /* Adjust the width of the profile icon as needed */
   height: 30px; /* Adjust the height of the profile icon as needed */
   border-radius: 50%; /* To make it circular, adjust based on the icon shape */
+  object-fit: cover;
 }
