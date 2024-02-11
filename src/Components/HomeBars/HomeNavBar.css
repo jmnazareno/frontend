@@ -26,8 +26,8 @@
 }
 
 .profile-icon img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin-left: 15px;
   object-fit: cover;
@@ -36,7 +36,7 @@
 .donation-button button {
   display: flex;
   align-items: center;
-  background-color: #4caf50;
+  background-color: #E30613;
   color: white;
   padding: 8px 20px; /* Adjust the padding for a longer button */
   border: none;
@@ -46,7 +46,7 @@
 }
 
 .donation-button button:hover {
-  background-color: #45a049;
+  background-color: #cc0916;
 }
 
 /* Add styles for the icon */

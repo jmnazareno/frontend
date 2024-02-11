@@ -1,11 +1,11 @@
 import React from 'react';
-import Login from './Pages/Login/Login';
+import DonorLayout from './Pages/Donor/DonorLayout';
 
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <DonorLayout/>
     </div>
   );
 }

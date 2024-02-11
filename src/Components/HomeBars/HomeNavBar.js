@@ -1,8 +1,8 @@
 import React from 'react';
 import './HomeNavBar.css';
-import { MonetizationOnRounded} from '@mui/icons-material'; // Import the Send icon
+import { MonetizationOnRounded, PersonRounded } from '@mui/icons-material'; // Import the icons
 
-const HomeNavBar = () => {
+const HomeNavBar = ({ isLoggedIn }) => {
   return (
     <div className="top-bar">
       <div className="logo">
@@ -18,7 +18,13 @@ const HomeNavBar = () => {
           </button>
         </div>
         <div className="profile-icon">
-          <img src="/Assets/person/1.jpeg" alt="Profile" />
+          {isLoggedIn ? (
+            <img src="/Assets/person/1.jpeg" alt="Profile" />
+          ) : (
+            <a href="/login">
+              <PersonRounded />
+            </a>
+          )}
         </div>
       </div>
     </div>

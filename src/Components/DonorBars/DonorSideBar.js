@@ -1,6 +1,13 @@
 import React from 'react';
 import { HomeRounded, PersonRounded, Settings } from '@mui/icons-material';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './DonorSideBar.css';
+
+const navigation = [
+  { name: 'home', to: '/' },
+  { name: 'profile', to: '/profile' },
+  { name: 'settings', to: '/settings' },
+];
 
 const DonorSideBar = () => {
   return (
@@ -14,18 +21,17 @@ const DonorSideBar = () => {
         <hr className="DonorSideBarLine" />
         {/* Icons */}
         <ul className="DonorSideBarList">
-          <li className="DonorSideBarListItem">
-            <HomeRounded className="DonorSideBarIcon" />
-            <span className="DonorSidebarListItemText">Home</span>
-          </li>
-          <li className="DonorSideBarListItem">
-            <PersonRounded className="DonorSideBarIcon" />
-            <span className="DonorSidebarListItemText">Profile</span>
-          </li>
-          <li className="DonorSideBarListItem">
-            <Settings className="DonorSideBarIcon" />
-            <span className="DonorSidebarListItemText">Settings</span>
-          </li>
+          {navigation.map((item) => (
+            <li key={item.name} className="DonorSideBarListItem">
+              {/* Use Link to create navigation links */}
+              <Link to={item.to} className="DonorSidebarLink">
+                {item.name === 'home' && <HomeRounded className="DonorSideBarIcon" />}
+                {item.name === 'profile' && <PersonRounded className="DonorSideBarIcon" />}
+                {item.name === 'settings' && <Settings className="DonorSideBarIcon" />}
+                <span className="DonorSidebarListItemText">{item.name}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

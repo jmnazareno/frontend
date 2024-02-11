@@ -1,83 +1,46 @@
 .Rightbar {
-    flex: 3.5;
-  }
-  
-  .RightBarWrapper {
-    padding: 20px 20px 0 0;
-  }
-  
-  .BirthdayContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .BirthdayImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .BirthdayText {
-    font-weight: 300;
-    font-size: 15px;
-  }
-  
-  .RightBarAd {
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px 0;
-  }
-  
-  .RightBarTitle{
-      margin-bottom: 20px;
-  }
-  
-  .RightBarFriendList {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .RightBarTitle{
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .RightBarInfo{
-    margin-bottom: 30px;
-  }
-  
-  .RightBarInfoItem{
-    margin-bottom: 10px;
-  }
-  
-  .RightBarInfoKey{
-    font-weight: 500;
-    margin-right: 15px;
-    color: #555;
-  }
-  
-  .RightBarInfoValue{
-    font-weight: 300;
-  }
-  
-  .RightBarFollowings{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .RightBarFollowing{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .RightBarFollowingImg{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
+  flex: 3.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.RightBarWrapper {
+  background-color: #FFFFFF;
+  padding-right: 20px;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.TrendBox{
+width: 300px;
+height: 40vh;
+background-color: #EBEBEB;
+color: #000000;
+border-radius: 43px;
+padding: 20px 40px;
+margin-left: 30px;
+margin-right:auto;
+border: #333;
+-webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+
+}
+
+.Trend{
+margin-left: 5px;
+font-weight: bold;
+}
+
+.TrendTopics{
+margin-top: 10px;
+}
+
+.TrendTitle{
+padding-top: 10px;
+font-weight: bold;
+}
+
+.TrendLikes{
+margin-top: 5px;
+font-size: small;
+}

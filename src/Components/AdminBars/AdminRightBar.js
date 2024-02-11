@@ -5,18 +5,22 @@ const AdminRightBar = () => {
   return (
     <div className='RightBar'>
       <div className='RightBarWrapper'>
-        <div className='BirthdayContainer'>
-          <img className='BirthdayImg' src="Assets/gift.png" alt=''/>
-          <span className='BirthdayText'>
-            <b>Pola Foster</b> and <b>3 other friends</b> hava birthday today
-          </span>
+        <div className='TrendBox'>
+          <div className='Trend'><h2>Trends</h2></div>
+          <div className='TrendTopic'>
+            <div className='TrendTitle'>Something</div>
+            <div className='TrendLikes'>11 Likes</div>
+          </div>
+          <div className='TrendTopic'>
+            <div className='TrendTitle'>Something</div>
+            <div className='TrendLikes'>11 Likes</div>
+          </div>
+          <div className='TrendTopic'>
+            <div className='TrendTitle'>Something</div>
+            <div className='TrendLikes'>11 Likes</div>
+          </div>
         </div>
       </div>
-      
-      
-      
-      
-      
     </div>
   )
 }
